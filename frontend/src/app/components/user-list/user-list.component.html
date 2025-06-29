@@ -1,0 +1,36 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Users ({{ usersStore.userCount() }})</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div *ngIf="usersStore.loading()" class="loading-container">
+      <mat-spinner></mat-spinner>
+      <p>Loading users...</p>
+    </div>
+
+    <div
+      *ngIf="!usersStore.loading() && usersStore.users().length === 0"
+      class="empty-state"
+    >
+      <mat-icon>person_add</mat-icon>
+      <p>No users found. Add a user to get started!</p>
+    </div>
+
+    <mat-list *ngIf="!usersStore.loading() && usersStore.users().length > 0">
+      <mat-list-item *ngFor="let user of usersStore.users(); last as isLast">
+        <div matListItemTitle>{{ user.name }}</div>
+        <div matListItemLine>{{ user.email }}</div>
+        <button
+          mat-icon-button
+          color="warn"
+          matListItemMeta
+          (click)="deleteUser(user.id, user.name)"
+          aria-label="Delete user"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+        <mat-divider *ngIf="!isLast"></mat-divider>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

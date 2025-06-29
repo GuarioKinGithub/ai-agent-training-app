@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+bun.lockb
+.angular/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Build outputs
+dist/
+build/
+.vite/
+
+# Database
+*.db
+*.db-journal
+.drizzle/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo

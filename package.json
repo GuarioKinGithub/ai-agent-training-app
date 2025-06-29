@@ -1,0 +1,38 @@
+{
+  "name": "ai-agent-training-app",
+  "private": true,
+  "workspaces": ["backend", "frontend", "shared"],
+  "scripts": {
+    "dev": "concurrently \"bun run dev:backend\" \"bun run dev:frontend\"",
+    "dev:backend": "cd backend && bun run dev",
+    "dev:frontend": "cd frontend && bun run dev",
+    "build": "bun run build:shared && bun run build:backend && bun run build:frontend",
+    "build:shared": "cd shared && bun run build",
+    "build:backend": "cd backend && bun run build",
+    "build:frontend": "cd frontend && bun run build",
+    "db:generate": "cd backend && bun run db:generate",
+    "db:push": "cd backend && bun run db:push",
+    "db:studio": "cd backend && bun run db:studio",
+    "typecheck": "bun run typecheck:shared && bun run typecheck:backend && bun run typecheck:frontend",
+    "typecheck:shared": "cd shared && bun run typecheck",
+    "typecheck:backend": "cd backend && bun run typecheck",
+    "typecheck:frontend": "cd frontend && bun run typecheck",
+    "lint": "eslint . --ext .ts,.js,.json --max-warnings 0",
+    "lint:fix": "eslint . --ext .ts,.js,.json --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "quality": "bun run typecheck && bun run lint && bun run format:check",
+    "quality:fix": "bun run typecheck && bun run lint:fix && bun run format"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "@types/bun": "latest",
+    "typescript": "^5.3.3",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3"
+  }
+}

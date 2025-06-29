@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+bun.lockb
+
+# Build outputs
+dist/
+build/
+.angular/
+
+# Database
+*.db
+*.db-journal
+.drizzle/
+
+# Generated files
+coverage/
+*.min.js
+*.min.css

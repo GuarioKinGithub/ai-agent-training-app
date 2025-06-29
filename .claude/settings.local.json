@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bun init:*)",
+      "Bash(mkdir:*)",
+      "Bash(bun add:*)",
+      "Bash(npm install:*)",
+      "Bash(ng new:*)",
+      "Bash(bun install:*)",
+      "Bash(mv:*)",
+      "Bash(bunx ng add:*)",
+      "Bash(bun run:*)",
+      "Bash(bunx ng serve:*)",
+      "Bash(curl:*)"
+    ],
+    "deny": []
+  }
+}

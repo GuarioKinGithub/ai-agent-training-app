@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+  <mat-icon>school</mat-icon>
+  <span class="toolbar-title">{{ title }}</span>
+  <span class="toolbar-subtitle">{{ subtitle }}</span>
+</mat-toolbar>
+
+<div class="container">
+  <div class="content">
+    <mat-toolbar
+      color="warn"
+      *ngIf="usersStore.hasError()"
+      class="error-banner"
+    >
+      <span>{{ usersStore.error() }}</span>
+      <span class="spacer"></span>
+      <button mat-icon-button (click)="clearError()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <div class="grid">
+      <app-user-form></app-user-form>
+      <app-user-list></app-user-list>
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,16 @@
+.full-width {
+  width: 100%;
+}
+
+mat-form-field {
+  margin-bottom: 1rem;
+}
+
+.spinner {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+button {
+  margin-top: 1rem;
+}
